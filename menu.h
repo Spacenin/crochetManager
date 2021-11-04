@@ -22,5 +22,6 @@ int savePattern(FILE* fp, Pattern pattern);
 int createImage(FILE *fp, Pattern pattern);
 Pattern createPattern(void);
 void clearPattern(Pattern p);
+Pattern editPattern(Pattern p);
 
 #endif

@@ -86,3 +86,24 @@ Pattern createPattern(void) {
 
     return(myPattern);
 }
+
+//Edit pattern row
+Pattern editPattern(Pattern p) {
+    int row;
+    int r;
+    int g;
+    int b;
+
+    fprintf(stdout, "Enter the row # you'd like to change: ");
+    fscanf(stdin, "%d", &row);
+    fprintf(stdout, "Enter the values to change it to (r g b): ");
+    fscanf(stdin, "%d %d %d", &r, &g, &b);
+
+    for (int i = 0; i < p.width; ++i) {
+        p.pixels[row][i].r = r;
+        p.pixels[row][i].g = g;
+        p.pixels[row][i].b = b;
+    }
+
+    return(p);
+}
