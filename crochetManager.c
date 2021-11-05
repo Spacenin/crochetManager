@@ -25,7 +25,8 @@ int main(void) {
         fprintf(stdout, "2. Save pattern to file\n");
         fprintf(stdout, "3. Create image of pattern\n");
         fprintf(stdout, "4. Create new pattern\n");
-        fprintf(stdout, "5. Edit pattern\n");
+        fprintf(stdout, "5. Edit row of pattern\n");
+        fprintf(stdout, "6. Add row to pattern\n");
         fprintf(stdout, "7. Quit program\n");
 
         fprintf(stdout, "--> ");
@@ -131,11 +132,26 @@ int main(void) {
             //Edit a row of pattern
             case 5:
                 if (myPattern.isSet == 0) {
-                    fprintf(stdout, "Error, the pattern isn't set!");
+                    fprintf(stdout, "Error, the pattern isn't set!\n");
                 }
 
                 else {
                     myPattern = editPattern(myPattern);
+
+                    fprintf(stdout, "Done!\n");
+                }
+
+                break;
+            //Add a row
+            case 6:
+                if (myPattern.isSet == 0) {
+                    fprintf(stdout, "Error, the pattern isn't set! Wrong place!!\n");
+                }
+
+                else {
+                    myPattern = addPattern(myPattern);
+
+                    fprintf(stdout, "Done!\n");
                 }
 
                 break;
